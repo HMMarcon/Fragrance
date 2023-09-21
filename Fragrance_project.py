@@ -54,9 +54,9 @@ def load_pickles_from_folder():
     files = [f for f in os.listdir()]
 
     # Filter for .pickle files
-    pickle_files = [f for f in files if f.endswith('.pkl')]
+    pickle_files = sorted([f for f in files if f.endswith('.pkl')])
     st.write(pickle_files)
-    data_list = []
+    models_list = []
 
     # Load each pickle file and append its content to data_list
     for pkl_file in pickle_files:
@@ -64,12 +64,11 @@ def load_pickles_from_folder():
             model = xgb.XGBClassifier()
             model.load_model(pkl_file)
             #data = load(file)
-            data_list.append(model)
+            models_list.append((pkl_file[:-4], model))
+            #data_list.append(model)
 
-    return data_list
+    return models_list
 
-# Example usage
-# folder_path = '/path/to/your/folder'
 
 all_models = load_pickles_from_folder()
 st.write(len(all_models))
@@ -87,10 +86,24 @@ if compound_FP[0] is None:
     st.markdown("Invalid SMILES or unable to generate fingerprint.")
 
 else:
-    st.markdown(compound_FP[0])
-    for model in all_models:
-        st.write(model)
-        st.write(compound_FP)
-        smell = model.predict(compound_FP)
-        st.write(smell)
+    #st.markdown(compound_FP[0])
+    #smells = []
+    #for model in all_models:
+        #st.write(model)
+        #st.write(compound_FP)
+        #smell = model.predict(compound_FP)
+        #st.write(smell)
+        #smells.append(smell)
+
+    positive_models = []  # List to store names of models that predict 1
+
+    for model_name, model_instance in all_models:
+        prediction = model_instance.predict(compound_FP)
+        if prediction == 1:
+            positive_models.append(model_name)
+
+    # Display the models that predicted 1
+    st.write("Molecule smells like:", positive_models)
+
+
 
