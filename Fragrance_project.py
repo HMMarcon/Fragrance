@@ -18,7 +18,7 @@ from rdkit.Chem import Descriptors
 
 # Non-standard metrics
 from sklearn.metrics import matthews_corrcoef as MCC
-
+import xgboost as xgb
 from xgboost import XGBClassifier
 
 from streamlit_ketcher import st_ketcher
