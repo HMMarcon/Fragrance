@@ -55,7 +55,7 @@ def load_pickles_from_folder():
 
     # Filter for .pickle files
     pickle_files = sorted([f for f in files if f.endswith('.pkl')])
-    st.write(pickle_files)
+    #st.write(pickle_files)
     models_list = []
 
     # Load each pickle file and append its content to data_list
@@ -71,7 +71,7 @@ def load_pickles_from_folder():
 
 
 all_models = load_pickles_from_folder()
-st.write(len(all_models))
+#st.write(len(all_models))
 
 st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
