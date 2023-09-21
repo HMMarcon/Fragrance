@@ -88,7 +88,7 @@ if compound_FP[0] is None:
 
 else:
     st.markdown(compound_FP[0])
-    for model in all_models:
+    for model in [all_models]:
         smell = model.predict(compound_FP[0])
         st.write(smell)
 
