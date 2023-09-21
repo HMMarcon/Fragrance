@@ -60,7 +60,7 @@ smiles = "'" + smile_code + "'"
 st.text(smiles)
 
 #compound = Chem.MolFromSmiles(smiles_code)
-compound_FP = smiles_to_fp([smiles])
+compound_FP = smiles_to_fp(smiles)
 
 st.markdown(compound_FP)
 
