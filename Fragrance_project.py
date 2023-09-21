@@ -55,11 +55,13 @@ st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
 smile_code = st_ketcher()
 #st.markdown(f"Smile code: ``{smile_code}``")
-smiles = "'" + smile_code + "'"
+#smiles = "'" + smile_code + "'"
 
 #compound = Chem.MolFromSmiles(smiles_code)
-compound_FP = smiles_to_fp([smiles])
+compound_FP = smiles_to_fp([smile_code])
 
-st.markdown(compound_FP)
-
+if compound_FP[0] is not None:
+    st.markdown(compound_FP[0])
+else:
+    st.markdown("Invalid SMILES or unable to generate fingerprint.")
 
