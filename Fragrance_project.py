@@ -73,8 +73,9 @@ def load_pickles_from_folder():
 all_models = load_pickles_from_folder()
 #st.write(len(all_models))
 
-st.markdown("# Draw your molecule")
-st.markdown("Draw your molecule and click on the button below to find out how it might smell like")
+st.markdown("# From Molecule to smell")
+st.markdown("Draw your molecule and click on the button below to find out how it might smell like.")
+st.markdown("Using cutting-edge artifical intelligence technology we are capable of predicting how molecules smell. Try it out and let us know how it performs for you!")
 smile_code = st_ketcher()
 #st.markdown(f"Smile code: ``{smile_code}``")
 #smiles = "'" + smile_code + "'"
