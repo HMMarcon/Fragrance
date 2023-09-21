@@ -60,8 +60,9 @@ smile_code = st_ketcher()
 #compound = Chem.MolFromSmiles(smiles_code)
 compound_FP = smiles_to_fp([smile_code])
 
-if compound_FP[0] is not None:
-    st.markdown(compound_FP[0])
-else:
+if compound_FP[0] is None:
     st.markdown("Invalid SMILES or unable to generate fingerprint.")
+
+else:
+    st.markdown(compound_FP[0])
 
