@@ -105,7 +105,7 @@ else:
 
     output = ""
     for positive_model in positive_models:
-        output = output + positive_model
+        output = output + positive_model + ", "
         
     # Display the models that predicted 1
     st.write("Molecule smells like:", output)
