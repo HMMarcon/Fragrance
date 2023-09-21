@@ -66,10 +66,9 @@ def load_pickles_from_folder(folder_path):
 
 # Example usage
 # folder_path = '/path/to/your/folder'
-try:
-    all_data = load_pickles_from_folder()
-except:
-    st.write("No Pickles")
+
+all_pickles = load_pickles_from_folder()
+
 
 st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
