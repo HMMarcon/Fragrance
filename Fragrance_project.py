@@ -23,9 +23,9 @@ from xgboost import XGBClassifier
 
 from streamlit_ketcher import st_ketcher
 
-with st.echo():
-    st.markdown("# Draw your molecule")
-    st.markdown("Draw your molecule and click on the button below to get the SMILES code")
-    smile_code = st_ketcher()
-    st.markdown(f"Smile code: ``{smile_code}``")
+
+st.markdown("# Draw your molecule")
+st.markdown("Draw your molecule and click on the button below to get the SMILES code")
+smile_code = st_ketcher()
+st.markdown(f"Smile code: ``{smile_code}``")
 
