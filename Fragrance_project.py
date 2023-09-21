@@ -49,9 +49,6 @@ def load_models():
     return pickle.load(open("model_fp2fp_Ridge_7.5.mlpickle", "rb"))
 
 
-
-# svd2svd_models = load_models()
-# svd = load_svd()
 fp2fp_model = load_models()
 '''
 
