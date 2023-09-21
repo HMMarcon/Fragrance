@@ -40,16 +40,36 @@ def fp_as_array(smile):
     arr = np.zeros((1,), int)
     DataStructs.ConvertToNumpyArray(fp, arr)
     return arr
-    
-'''
-## Loading models
+
+
+import os
+import pickle
+
 @st.cache_resource
-def load_models():
-    return pickle.load(open("model_fp2fp_Ridge_7.5.mlpickle", "rb"))
+def load_pickles_from_folder(folder_path):
+    """Load all pickle files from a given folder into a list."""
+    # List all files in the folder
+    files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
+    # Filter for .pickle files
+    pickle_files = [f for f in files if f.endswith('.pickle')]
 
-fp2fp_model = load_models()
-'''
+    data_list = []
+
+    # Load each pickle file and append its content to data_list
+    for pkl_file in pickle_files:
+        with open(os.path.join(folder_path, pkl_file), 'rb') as file:
+            data = pickle.load(file)
+            data_list.append(data)
+
+    return data_list
+
+# Example usage
+# folder_path = '/path/to/your/folder'
+try:
+    all_data = load_pickles_from_folder()
+except:
+    st.write("No Pickles")
 
 st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
