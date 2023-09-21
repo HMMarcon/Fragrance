@@ -68,7 +68,7 @@ def load_pickles_from_folder():
 # folder_path = '/path/to/your/folder'
 
 all_pickles = load_pickles_from_folder()
-st.write(all_pickles)
+st.write(len(all_pickles))
 
 st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
