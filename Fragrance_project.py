@@ -49,8 +49,8 @@ import pickle
 def load_pickles_from_folder(folder_path):
     """Load all pickle files from a given folder into a list."""
     # List all files in the folder
-    files = [f for f in os.listdir() if os.path.isfile(os.path.join(, f))]
-
+    files = [f for f in os.listdir()]
+    st.write(files)
     # Filter for .pickle files
     pickle_files = [f for f in files if f.endswith('.pickle')]
 
