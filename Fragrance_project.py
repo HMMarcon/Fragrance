@@ -23,6 +23,8 @@ from xgboost import XGBClassifier
 
 from streamlit_ketcher import st_ketcher
 
+from joblib import load
+
 
 # Fingerprints functions
 fp_size = [2048]
@@ -59,7 +61,7 @@ def load_pickles_from_folder():
     # Load each pickle file and append its content to data_list
     for pkl_file in pickle_files:
         with open(pkl_file, 'rb') as file:
-            data = pickle.load(file)
+            data = load(file)
             data_list.append(model)
 
     return data_list
