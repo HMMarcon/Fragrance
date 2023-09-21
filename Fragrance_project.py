@@ -56,10 +56,11 @@ st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
 smile_code = st_ketcher()
 #st.markdown(f"Smile code: ``{smile_code}``")
-st.text(smile_code)
+smiles = "'" + smiles_code + "'"
+st.text(smiles)
 
 #compound = Chem.MolFromSmiles(smiles_code)
-compound_FP = smiles_to_fp([smiles_code])
+compound_FP = smiles_to_fp([smiles])
 
 st.markdown(compound_FP)
 
