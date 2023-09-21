@@ -46,7 +46,7 @@ import os
 import pickle
 
 #@st.cache_resource
-def load_pickles_from_folder(folder_path):
+def load_pickles_from_folder():
     """Load all pickle files from a given folder into a list."""
     # List all files in the folder
     files = [f for f in os.listdir()]
