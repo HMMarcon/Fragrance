@@ -45,7 +45,7 @@ def fp_as_array(smile):
 import os
 import pickle
 
-@st.cache_resource
+#@st.cache_resource
 def load_pickles_from_folder():
     """Load all pickle files from a given folder into a list."""
     # List all files in the folder
