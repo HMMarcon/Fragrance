@@ -61,7 +61,9 @@ def load_pickles_from_folder():
     # Load each pickle file and append its content to data_list
     for pkl_file in pickle_files:
         with open(pkl_file, 'rb') as file:
-            data = load(file)
+            model = xgb.XGBClassifier()
+            model.load_model(model_filename)
+            #data = load(file)
             data_list.append(model)
 
     return data_list
