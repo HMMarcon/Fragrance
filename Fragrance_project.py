@@ -28,20 +28,19 @@ from streamlit_ketcher import st_ketcher
 fp_size = [2048]
 fp_radius = [2]
 
-
 def smiles_to_fp(smiles_list):
     fp_list = []
     for smile in smiles_list:
         fp_list.append(fp_as_array(smile))
     return fp_list
 
-
 def fp_as_array(smile):
     mol = Chem.MolFromSmiles(smile)
-    fp = AllChem.GetMorganFingerprintAsBitVect(mol, fp_radius[0], nBits=fp_size[0])
+    fp = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits = 2048)
     arr = np.zeros((1,), int)
     DataStructs.ConvertToNumpyArray(fp, arr)
     return arr
+    
 '''
 ## Loading models
 @st.cache_resource
@@ -60,7 +59,7 @@ smiles = "'" + smile_code + "'"
 st.text(smiles)
 
 #compound = Chem.MolFromSmiles(smiles_code)
-compound_FP = smiles_to_fp(smiles)
+compound_FP = smiles_to_fp([smiles])
 
 st.markdown(compound_FP)
 
