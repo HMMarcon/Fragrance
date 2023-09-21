@@ -90,6 +90,7 @@ else:
     st.markdown(compound_FP[0])
     for model in [all_models]:
         st.write(model)
+        st.write(compound_FP)
         smell = model.predict(compound_FP)
         st.write(smell)
 
