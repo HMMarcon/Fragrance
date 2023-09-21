@@ -52,7 +52,7 @@ def load_pickles_from_folder():
     files = [f for f in os.listdir()]
     st.write(files)
     # Filter for .pickle files
-    pickle_files = [f for f in files if f.endswith('.pickle')]
+    pickle_files = [f for f in files if f.endswith('.pkl')]
 
     data_list = []
 
