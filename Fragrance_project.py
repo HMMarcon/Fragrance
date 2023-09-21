@@ -71,8 +71,8 @@ def load_pickles_from_folder():
 # Example usage
 # folder_path = '/path/to/your/folder'
 
-all_pickles = load_pickles_from_folder()
-st.write(len(all_pickles))
+all_models = load_pickles_from_folder()
+st.write(len(all_models))
 
 st.markdown("# Draw your molecule")
 st.markdown("Draw your molecule and click on the button below to get the SMILES code")
@@ -88,4 +88,7 @@ if compound_FP[0] is None:
 
 else:
     st.markdown(compound_FP[0])
+    for model in all_models:
+        smell = model.predict(compound_FP[0])
+        st.write(smell)
 
