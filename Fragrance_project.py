@@ -91,6 +91,6 @@ else:
     for model in [all_models]:
         st.write(model)
         st.write(compound_FP)
-        smell = model.predict([compound_FP])
+        smell = model.predict(compound_FP[0])
         st.write(smell)
 
