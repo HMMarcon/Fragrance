@@ -48,10 +48,11 @@ import os
 import pickle
 
 @st.cache_resource
-def load_pickles_from_folder():
+def load_pickles_from_folder(subfolder = 'models'):
     """Load all pickle files from a given folder into a list."""
     # List all files in the folder
-    files = [f for f in os.listdir()]
+    folder_path = os.path.join(os.getcwd(), subfolder)
+    files = [f for f in os.listdir(folder_path)]
 
     # Filter for .pickle files
     pickle_files = sorted([f for f in files if f.endswith('.pkl')])
