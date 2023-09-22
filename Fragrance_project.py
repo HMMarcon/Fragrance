@@ -56,6 +56,7 @@ def load_pickles_from_folder(subfolder = 'models'):
 
     # Filter for .pickle files
     pickle_files = sorted([f for f in files if f.endswith('.pkl')])
+    st.write(len(pickle_files)
     #st.write(pickle_files)
     models_list = []
 
