@@ -56,15 +56,17 @@ def load_pickles_from_folder(subfolder = 'models'):
 
     # Filter for .pickle files
     pickle_files = sorted([f for f in files if f.endswith('.pkl')])
-    st.write(len(pickle_files))
+
     #st.write(pickle_files)
     models_list = []
 
     # Load each pickle file and append its content to data_list
     for pkl_file in pickle_files:
+        st.write('loading')
         with open(pkl_file, 'rb') as file:
             model = xgb.XGBClassifier()
             model.load_model(pkl_file)
+            st.write('model loaded')
             #data = load(file)
             models_list.append((pkl_file[:-4], model))
             #data_list.append(model)
