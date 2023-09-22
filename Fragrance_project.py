@@ -66,7 +66,6 @@ def load_pickles_from_folder(subfolder = 'models'):
         with open(file_path, 'rb') as file:
             model = xgb.XGBClassifier()
             model.load_model(file_path)
-            st.write('model loaded')
             #data = load(file)
             models_list.append((pkl_file[:-4], model))
             #data_list.append(model)
