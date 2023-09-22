@@ -52,7 +52,6 @@ def load_pickles_from_folder(subfolder = 'models'):
     """Load all pickle files from a given folder into a list."""
     # List all files in the folder
     folder_path = os.path.join(os.getcwd(), subfolder)
-    st.write(folder_path)
     files = [f for f in os.listdir(folder_path)]
 
     # Filter for .pickle files
@@ -66,7 +65,7 @@ def load_pickles_from_folder(subfolder = 'models'):
         file_path = os.path.join(folder_path, pkl_file)  # Full path to the .pkl file
         with open(file_path, 'rb') as file:
             model = xgb.XGBClassifier()
-            model.load_model(pkl_file)
+            model.load_model(file_path)
             st.write('model loaded')
             #data = load(file)
             models_list.append((pkl_file[:-4], model))
