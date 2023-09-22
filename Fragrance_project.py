@@ -52,6 +52,7 @@ def load_pickles_from_folder(subfolder = 'models'):
     """Load all pickle files from a given folder into a list."""
     # List all files in the folder
     folder_path = os.path.join(os.getcwd(), subfolder)
+    st.write(folder_path)
     files = [f for f in os.listdir(folder_path)]
 
     # Filter for .pickle files
@@ -74,7 +75,7 @@ def load_pickles_from_folder(subfolder = 'models'):
     return models_list
 
 
-all_models = load_pickles_from_folder()
+all_models = load_pickles_from_folder(subfolder = 'models')
 #st.write(len(all_models))
 
 st.markdown("# From Molecule to smell")
