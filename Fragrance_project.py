@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-import pickle
+#import pickle
 
 
 # Basic chemistry packages
@@ -45,7 +45,6 @@ def fp_as_array(smile):
 
 
 import os
-import pickle
 
 @st.cache_resource
 def load_pickles_from_folder(subfolder = 'models'):
