@@ -112,7 +112,10 @@ else:
             output = output + ", "
         
     # Display the models that predicted 1
-    st.write("Molecule smells like:", output)
+    if len(output >= 1):
+        st.write("Molecule smells like:", output)
+    else
+        st.write("The molecule has no particular smell")
 
 
 
